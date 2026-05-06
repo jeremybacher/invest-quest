@@ -1,0 +1,30 @@
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { classifyRiskProfile } from "@/lib/ai/profiler";
+import { db } from "@/lib/db";
+
+const BodySchema = z.object({
+  userId: z.string().min(1),
+  answers: z.array(z.string().min(1)).min(1).max(10),
+});
+
+export async function POST(req: NextRequest) {
+  const body = await req.json().catch(() => null);
+  const parsed = BodySchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json({ ok: false, error: "invalid_input" }, { status: 400 });
+  }
+
+  const { userId, answers } = parsed.data;
+
+  const user = await db.user.findUnique({ where: { id: userId }, select: { id: true } });
+  if (!user) return NextResponse.json({ ok: false, error: "user_not_found" }, { status: 404 });
+
+  const result = await classifyRiskProfile(userId, answers);
+
+  if (!result.ok) {
+    return NextResponse.json(result, { status: result.error === "no_provider_configured" ? 422 : 500 });
+  }
+
+  return NextResponse.json(result);
+}

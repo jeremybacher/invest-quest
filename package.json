@@ -1,0 +1,58 @@
+{
+  "name": "invest-quest",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node node_modules/next/dist/bin/next dev",
+    "build": "node node_modules/next/dist/bin/next build",
+    "start": "node node_modules/next/dist/bin/next start",
+    "lint": "node node_modules/eslint/bin/eslint.js . --ext .ts,.tsx",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "db:seed": "node_modules/.bin/tsx prisma/seed.ts",
+    "db:reset": "rm -f prisma/dev.db prisma/dev.db-journal && node_modules/.bin/prisma migrate deploy && npm run db:seed"
+  },
+  "prisma": {
+    "seed": "node_modules/.bin/tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.71",
+    "@ai-sdk/google": "^3.0.64",
+    "@ai-sdk/openai": "^3.0.53",
+    "@hookform/resolvers": "^5.2.2",
+    "@libsql/client": "^0.17.2",
+    "@prisma/adapter-libsql": "^7.7.0",
+    "@prisma/client": "^5.22.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "ai": "^6.0.168",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.8.0",
+    "next": "16.2.4",
+    "next-themes": "^0.4.6",
+    "prisma": "^5.22.0",
+    "radix-ui": "^1.4.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.73.1",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.8.1",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.39",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
