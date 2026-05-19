@@ -52,7 +52,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         </header>
 
         {/* Page content */}
-        <main className="flex-1 p-4 pb-20 lg:pb-6 lg:px-6">{children}</main>
+        <main className="flex-1 px-4 pt-4 pb-[calc(5rem+env(safe-area-inset-bottom,0px))] lg:pb-6 lg:px-6">{children}</main>
       </div>
 
       <MobileNav />

@@ -49,7 +49,7 @@ function MobileLink({ href, label, icon: Icon }: { href: string; label: string; 
       )}
     >
       <Icon className="h-5 w-5" />
-      <span className="hidden xs:block">{label}</span>
+      <span>{label}</span>
     </Link>
   );
 }
@@ -66,7 +66,7 @@ export function SidebarNav() {
 
 export function MobileNav() {
   return (
-    <nav className="lg:hidden fixed bottom-0 inset-x-0 z-50 flex border-t bg-background/95 backdrop-blur">
+    <nav className="lg:hidden fixed bottom-0 inset-x-0 z-50 flex border-t bg-background/95 backdrop-blur pb-[env(safe-area-inset-bottom,0px)]">
       {NAV_ITEMS.map(({ href, label, icon }) => (
         <MobileLink key={href} href={href} label={label} icon={icon} />
       ))}

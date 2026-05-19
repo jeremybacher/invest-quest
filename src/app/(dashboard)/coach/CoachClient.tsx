@@ -150,7 +150,7 @@ export function CoachClient({
   const showQuickPrompts = messages.length === 0 || (messages.length > 0 && messages.length < 3);
 
   return (
-    <div className="max-w-2xl mx-auto flex flex-col" style={{ height: "calc(100dvh - 7rem)" }}>
+    <div className="max-w-2xl mx-auto flex flex-col h-[calc(100dvh-9.5rem)] lg:h-[calc(100dvh-7rem)]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4 shrink-0">
         <div className="flex items-center gap-3">

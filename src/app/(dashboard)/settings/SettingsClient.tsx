@@ -146,7 +146,7 @@ export function SettingsClient({ userId, currentProvider, currentModel, riskProf
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <Label>Proveedor</Label>
-            <RadioGroup value={provider} onValueChange={(v) => handleProviderChange(v as Provider)} className="flex gap-4">
+            <RadioGroup value={provider} onValueChange={(v) => handleProviderChange(v as Provider)} className="flex flex-wrap gap-4">
               {(Object.keys(PROVIDER_NAMES) as Provider[]).map((p) => (
                 <div key={p} className="flex items-center gap-2">
                   <RadioGroupItem value={p} id={p} />
@@ -187,7 +187,7 @@ export function SettingsClient({ userId, currentProvider, currentModel, riskProf
             </div>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button onClick={handleSaveProvider} disabled={savingProvider}>
               {savingProvider ? "Guardando…" : "Guardar"}
             </Button>
