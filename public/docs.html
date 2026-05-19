@@ -126,12 +126,10 @@
       position: relative;
       overflow: hidden;
       border-radius: 34px;
-      padding: 42px;
-      background:
-        linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92)),
-        linear-gradient(135deg, #1d4ed8, #0f766e);
+      padding: 46px 48px;
+      background: linear-gradient(140deg, #0c1629 0%, #112240 45%, #0b1e18 100%);
       color: #fff;
-      box-shadow: 0 28px 60px rgba(15, 23, 42, 0.22);
+      box-shadow: 0 32px 72px rgba(10,20,40,0.32);
     }
 
     .hero-card::before,
@@ -140,82 +138,127 @@
       position: absolute;
       border-radius: 50%;
       pointer-events: none;
+      filter: blur(48px);
     }
 
     .hero-card::before {
-      width: 320px;
-      height: 320px;
-      top: -150px;
-      right: -80px;
-      background: rgba(59, 130, 246, 0.18);
+      width: 480px;
+      height: 480px;
+      top: -180px;
+      right: -100px;
+      background: rgba(59, 130, 246, 0.2);
     }
 
     .hero-card::after {
-      width: 240px;
-      height: 240px;
-      bottom: -120px;
+      width: 360px;
+      height: 360px;
+      bottom: -160px;
       left: -80px;
-      background: rgba(16, 185, 129, 0.14);
+      background: rgba(16, 185, 129, 0.16);
     }
 
     .eyebrow {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
+      gap: 10px;
+      font-size: 0.76rem;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: rgba(255, 255, 255, 0.72);
-      margin-bottom: 16px;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.52);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.35);
+      flex: 0 0 auto;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.3rem, 6vw, 4.6rem);
-      line-height: 1.02;
+      font-size: clamp(2.6rem, 6.5vw, 5rem);
+      line-height: 1.0;
       letter-spacing: -0.05em;
       max-width: 840px;
+      font-weight: 800;
+    }
+
+    .hero-title-accent {
+      color: transparent;
+      background: linear-gradient(90deg, #60a5fa 20%, #34d399 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
     .hero-subtitle {
-      margin: 18px 0 0;
-      max-width: 760px;
-      font-size: 1.08rem;
-      color: rgba(255, 255, 255, 0.83);
+      margin: 20px 0 0;
+      max-width: 680px;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 18px;
-      margin-top: 28px;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 16px;
+      margin-top: 30px;
       position: relative;
       z-index: 1;
     }
 
     .glass-card {
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.07);
       border-radius: 22px;
-      padding: 20px;
+      padding: 22px;
+      backdrop-filter: blur(12px);
     }
 
     .hero-kpis {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 4px;
+    }
+
+    .hero-kpi {
+      padding: 10px 8px;
+      border-radius: 14px;
     }
 
     .hero-kpi strong {
       display: block;
-      font-size: 1.7rem;
-      margin-bottom: 2px;
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height: 1;
+      color: transparent;
+      background: linear-gradient(135deg, #93c5fd, #6ee7b7);
+      -webkit-background-clip: text;
+      background-clip: text;
     }
 
     .hero-kpi span,
     .hero-note {
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+
+    .hero-kpi-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 14px 0;
+    }
+
+    .hero-card .badge {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.88);
     }
 
     .section {
@@ -396,28 +439,30 @@
     }
 
     .flow-step {
-      display: grid;
-      grid-template-columns: 56px 1fr;
+      display: flex;
+      flex-direction: row;
       gap: 16px;
-      align-items: start;
-      padding: 18px;
+      align-items: flex-start;
+      padding: 16px 18px;
       border-radius: var(--radius-lg);
       background: linear-gradient(180deg, #ffffff, #f8fbff);
       border: 1px solid var(--line);
     }
 
     .flow-step .num {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      display: inline-flex;
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
       align-items: center;
       justify-content: center;
       background: linear-gradient(135deg, #1d4ed8, #0f766e);
       color: #fff;
       font-weight: 800;
-      font-size: 1.1rem;
-      box-shadow: 0 12px 24px rgba(29, 78, 216, 0.18);
+      font-size: 1rem;
+      box-shadow: 0 8px 20px rgba(29, 78, 216, 0.22);
+      margin-top: 1px;
     }
 
     .arch-diagram {
@@ -614,6 +659,62 @@
       pointer-events: auto;
     }
 
+    /* ── Design improvements ── */
+    .card {
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 60px rgba(15,23,42,0.11);
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--primary-soft);
+      border: 1px solid rgba(29,78,216,0.16);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .nav-icon {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .visual-index a {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .arch-box {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .arch-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.08);
+    }
+
+    .flow-step {
+      transition: background 0.18s ease;
+    }
+    .flow-step:hover {
+      background: linear-gradient(180deg, #f8faff, #f0f6ff);
+    }
+
+    .table-row {
+      transition: background 0.18s ease;
+    }
+    .table-row:hover {
+      background: rgba(255,255,255,0.95);
+    }
+
+    .timeline-item::before {
+      box-shadow: 0 0 0 4px rgba(29,78,216,0.14), 0 0 0 8px rgba(29,78,216,0.05);
+    }
+
     @media (max-width: 1024px) {
       .hero-grid,
       .grid-4,
@@ -673,14 +774,9 @@
         padding: 18px;
       }
 
-      .flow-step {
-        grid-template-columns: 1fr;
-      }
-
       .flow-step .num {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
+        width: 40px;
+        height: 40px;
       }
     }
   </style>
@@ -710,7 +806,7 @@
     <section class="hero" id="portada">
       <div class="hero-card">
         <div class="eyebrow">Plataforma educativa fintech</div>
-        <h1>Invest Quest</h1>
+        <h1>Invest <span class="hero-title-accent">Quest</span></h1>
         <p class="hero-subtitle">
           Simulador educativo de inversiones con mecánicas de gamificación, mercado ficticio, lecciones interactivas y funciones asistidas por IA para aprender finanzas de forma práctica y segura.
         </p>
@@ -734,19 +830,20 @@
             <div class="hero-kpis">
               <div class="hero-kpi">
                 <strong>6</strong>
-                <span>pantallas principales</span>
+                <span>pantallas</span>
               </div>
               <div class="hero-kpi">
                 <strong>5</strong>
-                <span>endpoints internos</span>
+                <span>endpoints</span>
               </div>
               <div class="hero-kpi">
                 <strong>3</strong>
-                <span>proveedores IA soportados</span>
+                <span>proveedores IA</span>
               </div>
             </div>
-            <p class="hero-note" style="margin-top: 16px;">
-              El sistema está implementado actualmente como MVP demostrativo: sin autenticación productiva y sin datos financieros reales.
+            <div class="hero-kpi-divider"></div>
+            <p class="hero-note">
+              MVP demostrativo — sin autenticación productiva ni datos financieros reales.
             </p>
           </div>
         </div>
@@ -766,16 +863,16 @@
       </div>
 
       <div class="visual-index grid grid-4">
-        <a href="#descripcion-funcional"><strong>Descripción funcional</strong><span>Propósito, problema resuelto y usuarios.</span></a>
-        <a href="#modulos"><strong>Módulos principales</strong><span>Capacidades detectadas realmente en el código.</span></a>
-        <a href="#arquitectura"><strong>Arquitectura</strong><span>Frontend, backend, base de datos y flujo.</span></a>
-        <a href="#tecnologias"><strong>Tecnologías</strong><span>Frameworks, librerías y herramientas.</span></a>
-        <a href="#estructura"><strong>Estructura del proyecto</strong><span>Carpetas y responsabilidades.</span></a>
-        <a href="#flujos"><strong>Flujos del usuario</strong><span>Recorridos principales dentro del sistema.</span></a>
-        <a href="#capturas"><strong>Capturas</strong><span>Placeholders listos para insertar imágenes.</span></a>
-        <a href="#tecnico"><strong>Consideraciones técnicas</strong><span>Validaciones, seguridad y persistencia.</span></a>
-        <a href="#mejoras"><strong>Mejoras futuras</strong><span>Oportunidades funcionales y técnicas.</span></a>
-        <a href="#conclusion"><strong>Conclusión</strong><span>Valor del sistema y cierre ejecutivo.</span></a>
+        <a href="#descripcion-funcional"><span class="nav-icon">🎯</span><strong>Descripción funcional</strong><span>Propósito, problema resuelto y usuarios.</span></a>
+        <a href="#modulos"><span class="nav-icon">⚙️</span><strong>Módulos principales</strong><span>Capacidades detectadas realmente en el código.</span></a>
+        <a href="#arquitectura"><span class="nav-icon">🏗️</span><strong>Arquitectura</strong><span>Frontend, backend, base de datos y flujo.</span></a>
+        <a href="#tecnologias"><span class="nav-icon">🛠️</span><strong>Tecnologías</strong><span>Frameworks, librerías y herramientas.</span></a>
+        <a href="#estructura"><span class="nav-icon">📁</span><strong>Estructura del proyecto</strong><span>Carpetas y responsabilidades.</span></a>
+        <a href="#flujos"><span class="nav-icon">🔄</span><strong>Flujos del usuario</strong><span>Recorridos principales dentro del sistema.</span></a>
+        <a href="#capturas"><span class="nav-icon">📸</span><strong>Capturas</strong><span>Screenshots de las pantallas principales.</span></a>
+        <a href="#tecnico"><span class="nav-icon">🔐</span><strong>Consideraciones técnicas</strong><span>Validaciones, seguridad y persistencia.</span></a>
+        <a href="#mejoras"><span class="nav-icon">🚀</span><strong>Mejoras futuras</strong><span>Oportunidades funcionales y técnicas.</span></a>
+        <a href="#conclusion"><span class="nav-icon">✅</span><strong>Conclusión</strong><span>Valor del sistema y cierre ejecutivo.</span></a>
       </div>
     </section>
 
@@ -804,9 +901,6 @@
           <p>
             Sirve para simular operaciones financieras, comprender tipos de activos, reforzar conceptos mediante lecciones y quizzes, medir progreso con XP y recibir orientación educativa usando modelos de IA configurables.
           </p>
-          <p>
-            Además, la interfaz fue pensada para utilizarse tanto en escritorio como en dispositivos móviles, permitiendo acceder a la experiencia educativa desde distintos tamaños de pantalla.
-          </p>
         </article>
 
         <article class="card">
@@ -819,12 +913,6 @@
         </article>
       </div>
 
-      <div class="card" style="margin-top: 18px;">
-        <h3>Alcance funcional actual</h3>
-        <p>
-          La aplicación implementa un flujo central de <strong>usuario demo</strong>, <strong>dashboard</strong>, <strong>simulador de inversiones</strong>, <strong>contenido educativo</strong>, <strong>coach IA</strong>, <strong>ranking</strong> y <strong>ajustes</strong>. No se detectó autenticación real ni un feed de noticias financieras en esta versión del código.
-        </p>
-      </div>
     </section>
 
     <!-- =========================================================
@@ -927,23 +1015,6 @@
           </ul>
         </article>
 
-        <article class="card">
-          <h3>Noticias o información financiera</h3>
-          <p>
-            <strong>No se detectó un módulo de noticias financieras reales.</strong> En su lugar, el sistema ofrece contenido educativo interno y simulación de mercado. Si en futuras iteraciones se requiere esta funcionalidad, debería incorporarse como módulo nuevo o quedar pendiente de confirmar.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Otros módulos detectados</h3>
-          <ul class="list-clean">
-            <li><strong>Motor de mercado simulado:</strong> genera nuevas cotizaciones con random walk y volatilidad controlada.</li>
-            <li><strong>API de feedback IA:</strong> endpoint presente para generar feedback de misiones.</li>
-            <li><strong>API de misión personalizada IA:</strong> endpoint presente para crear desafíos educativos.</li>
-            <li><strong>Selector de tema:</strong> modo claro/oscuro mediante <code>next-themes</code>.</li>
-          </ul>
-          <p class="muted">Las APIs de feedback y challenge existen en el código, pero su exposición directa en la interfaz actual queda parcialmente pendiente de confirmar.</p>
-        </article>
       </div>
     </section>
 
@@ -1213,62 +1284,35 @@
         </div>
       </div>
 
-      <div class="grid grid-2">
-        <article class="card">
-          <h3>Flujo de “registro”</h3>
-          <div class="flow">
-            <div class="flow-step">
-              <div class="num">1</div>
+      <div class=”grid grid-2”>
+        <article class=”card”>
+          <h3>Acceso al sistema (modo demo)</h3>
+          <div class=”flow”>
+            <div class=”flow-step”>
+              <div class=”num”>1</div>
               <div>
-                <strong>Estado actual</strong>
-                No existe alta de usuario desde formulario.
+                <strong>Usuarios precargados</strong>
+                El sistema arranca con tres perfiles demo (Ana, Bruno y Carla). No hay formulario de registro ni autenticación real.
               </div>
             </div>
-            <div class="flow-step">
-              <div class="num">2</div>
-              <div>
-                <strong>Alternativa implementada</strong>
-                El sistema arranca con usuarios demo precargados mediante seed: Ana, Bruno y Carla.
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="num">3</div>
-              <div>
-                <strong>Uso práctico</strong>
-                El usuario final elige uno de esos perfiles desde el selector superior.
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Flujo de inicio de sesión</h3>
-          <div class="flow">
-            <div class="flow-step">
-              <div class="num">1</div>
+            <div class=”flow-step”>
+              <div class=”num”>2</div>
               <div>
                 <strong>Selección de perfil</strong>
-                Se cambia el usuario activo desde el dropdown de “modo demo”.
+                El usuario elige un perfil desde el dropdown. El ID se guarda en una cookie <code>iq-user-id</code>.
               </div>
             </div>
-            <div class="flow-step">
-              <div class="num">2</div>
-              <div>
-                <strong>Persistencia local</strong>
-                El identificador del usuario se guarda en una cookie.
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="num">3</div>
+            <div class=”flow-step”>
+              <div class=”num”>3</div>
               <div>
                 <strong>Resolución server-side</strong>
-                El backend valida si ese <code>userId</code> existe y carga los datos correspondientes.
+                El backend valida si ese <code>userId</code> existe y carga sus datos correspondientes.
               </div>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class=”card”>
           <h3>Flujo de uso del dashboard</h3>
           <div class="flow">
             <div class="flow-step">
@@ -1295,32 +1339,6 @@
           </div>
         </article>
 
-        <article class="card">
-          <h3>Flujo de consulta o carga de información</h3>
-          <div class="flow">
-            <div class="flow-step">
-              <div class="num">1</div>
-              <div>
-                <strong>Consulta educativa</strong>
-                El usuario puede leer lecciones, realizar quiz y reclamar XP.
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="num">2</div>
-              <div>
-                <strong>Consulta asistida por IA</strong>
-                Si configuró proveedor y API key, puede usar el coach o clasificar perfil de riesgo.
-              </div>
-            </div>
-            <div class="flow-step">
-              <div class="num">3</div>
-              <div>
-                <strong>Carga de configuración</strong>
-                Guarda proveedor, modelo y clave cifrada en base de datos.
-              </div>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -1338,28 +1356,28 @@
 
       <div class="placeholder-grid">
         <div class="card shot-card">
-          <img src="public/dashboard.png" alt="Captura del dashboard principal de InvestQuest" />
+          <img src="/dashboard.png" alt="Captura del dashboard principal de InvestQuest" />
           <div class="shot-caption">
             <strong>Captura 1: Dashboard</strong>
             <span class="muted">Vista principal del sistema con resumen de portfolio, nivel, XP y accesos rápidos a los módulos clave.</span>
           </div>
         </div>
         <div class="card shot-card">
-          <img src="public/simulador.png" alt="Captura del módulo simulador de InvestQuest" />
+          <img src="/simulador.png" alt="Captura del módulo simulador de InvestQuest" />
           <div class="shot-caption">
             <strong>Captura 2: Simulador</strong>
             <span class="muted">Pantalla de simulación de inversiones con activos disponibles, actualización de precios y acciones de compra o venta.</span>
           </div>
         </div>
         <div class="card shot-card">
-          <img src="public/aprender.png" alt="Captura del módulo Aprender de InvestQuest" />
+          <img src="/aprender.png" alt="Captura del módulo Aprender de InvestQuest" />
           <div class="shot-caption">
             <strong>Captura 3: Aprender</strong>
             <span class="muted">Módulo educativo con lecciones organizadas por tema, lectura de contenidos y quizzes para ganar experiencia.</span>
           </div>
         </div>
         <div class="card shot-card">
-          <img src="public/coachIA.png" alt="Captura del módulo Coach IA de InvestQuest" />
+          <img src="/coachIA.png" alt="Captura del módulo Coach IA de InvestQuest" />
           <div class="shot-caption">
             <strong>Captura 4: Coach IA</strong>
             <span class="muted">Asistente conversacional educativo configurado con proveedor de inteligencia artificial para orientar al usuario según su contexto financiero.</span>
@@ -1375,42 +1393,42 @@
 
         <div class="mobile-gallery" style="margin-top: 18px;">
           <div class="card mobile-shot">
-            <img src="public/mobile-1.png" alt="Vista mobile 1 de InvestQuest" />
+            <img src="/mobile-1.png" alt="Vista mobile 1 de InvestQuest" />
             <div class="shot-caption">
               <strong>Mobile 1: Simulador</strong>
               <span class="muted">Versión mobile del simulador de inversiones, pensada para operar, visualizar activos y seguir la cartera desde smartphone.</span>
             </div>
           </div>
           <div class="card mobile-shot">
-            <img src="public/mobile-2.png" alt="Vista mobile 2 de InvestQuest" />
+            <img src="/mobile-2.png" alt="Vista mobile 2 de InvestQuest" />
             <div class="shot-caption">
               <strong>Mobile 2: Coach IA</strong>
               <span class="muted">Adaptación mobile del asistente conversacional, manteniendo legibilidad, interacción simple y acceso rápido a consultas educativas.</span>
             </div>
           </div>
           <div class="card mobile-shot">
-            <img src="public/mobile-3.png" alt="Vista mobile 3 de InvestQuest" />
+            <img src="/mobile-3.png" alt="Vista mobile 3 de InvestQuest" />
             <div class="shot-caption">
               <strong>Mobile 3: Ranking y gamificación</strong>
               <span class="muted">Vista responsive del ranking, donde se refuerzan la competencia amistosa, el progreso y los elementos de gamificación.</span>
             </div>
           </div>
           <div class="card mobile-shot">
-            <img src="public/mobile-4.png" alt="Vista mobile 4 de InvestQuest" />
+            <img src="/mobile-4.png" alt="Vista mobile 4 de InvestQuest" />
             <div class="shot-caption">
               <strong>Mobile 4: Aprender</strong>
               <span class="muted">Módulo de aprendizaje adaptado a pantallas pequeñas para facilitar la lectura de lecciones y el acceso a quizzes.</span>
             </div>
           </div>
           <div class="card mobile-shot">
-            <img src="public/mobile-5.png" alt="Vista mobile 5 de InvestQuest" />
+            <img src="/mobile-5.png" alt="Vista mobile 5 de InvestQuest" />
             <div class="shot-caption">
               <strong>Mobile 5: Dashboard</strong>
               <span class="muted">Resumen principal del sistema en mobile, con foco en portfolio, XP, navegación y próximos pasos del usuario.</span>
             </div>
           </div>
           <div class="card mobile-shot">
-            <img src="public/mobile-6.png" alt="Vista mobile 6 de InvestQuest" />
+            <img src="/mobile-6.png" alt="Vista mobile 6 de InvestQuest" />
             <div class="shot-caption">
               <strong>Mobile 6: Ajustes y conexión IA</strong>
               <span class="muted">Pantalla de ajustes en mobile con configuración del proveedor de IA, un plus clave de la herramienta por su personalización y expansión funcional.</span>
@@ -1545,21 +1563,13 @@
 
       <div class="card">
         <p>
-          InvestQuest es un sistema educativo con enfoque fintech que combina simulación, contenido formativo, gamificación e integración opcional con inteligencia artificial. Su principal valor es ofrecer un espacio de práctica accesible para aprender sobre inversiones sin riesgo financiero real.
-        </p>
-        <p>
-          Desde el punto de vista académico o de demo profesional, el proyecto muestra una arquitectura moderna, una separación razonable de responsabilidades y una propuesta de producto clara. A la vez, deja explícitos sus límites actuales: modo demo, autenticación no productiva, datos simulados y enfoque MVP en seguridad de claves.
-        </p>
-        <p>
-          En conjunto, se trata de una base sólida para presentar una idea de plataforma educativa financiera, validar experiencia de usuario y evolucionar hacia una versión más completa en futuras etapas.
+          InvestQuest es un MVP educativo que combina simulación de inversiones, gamificación e IA configurable para enseñar finanzas sin riesgo real. Muestra una arquitectura moderna con separación clara de responsabilidades, dejando explícitos sus límites actuales: modo demo, autenticación no productiva y datos simulados. Es una base sólida para validar la propuesta de producto y escalar en futuras etapas.
         </p>
       </div>
     </section>
 
     <footer class="footer">
-      <p>
-        Documento generado a partir del análisis real del código fuente del proyecto <strong>InvestQuest</strong>. Si se agregan nuevos módulos o se habilitan funcionalidades ya presentes a nivel backend, conviene actualizar esta documentación para mantenerla alineada con el estado del sistema.
-      </p>
+      <p>Documentación de <strong>InvestQuest</strong> — MVP demostrativo educativo.</p>
     </footer>
   </main>
 
