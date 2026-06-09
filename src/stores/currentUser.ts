@@ -8,7 +8,7 @@ type CurrentUserStore = {
   setUserId: (id: string) => void;
 };
 
-function syncCookie(userId: string) {
+export function syncCookie(userId: string) {
   if (typeof document !== "undefined") {
     document.cookie = `iq-user-id=${userId}; path=/; max-age=31536000; SameSite=Lax`;
   }

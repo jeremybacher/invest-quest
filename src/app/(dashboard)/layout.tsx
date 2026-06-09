@@ -15,7 +15,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   return (
     <div className="flex min-h-screen">
-      <UserProvider defaultUserId={defaultUser?.id ?? ""} />
+      <UserProvider defaultUserId={defaultUser?.id ?? ""} validUserIds={users.map((u) => u.id)} />
 
       {/* Desktop Sidebar */}
       <aside className="hidden lg:flex lg:flex-col lg:w-60 lg:fixed lg:inset-y-0 bg-gradient-to-b from-indigo-900 to-indigo-950">
